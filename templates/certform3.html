@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+  {% if messages %}
+  {% for message in messages %}
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          {{ message }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+  {% endfor %}
+{% endif %}   
+  <br>
+  <h1>Practices Form</h1>
+  <p>To ensure all guide lines are followed</p>
+  <div class="card">
+    <div class="card-body" >
+      <form class="row g-3" method="POST" action = {% url 'certform3' %}>
+        {% csrf_token %}
+        <div class="col-md-4">
+          <label for="inputmobile4" class="form-label">Email</label>
+          <input type="email" class="form-control" id="inputmobile4" name ="email"/>
+        </div>
+        <div class="col-md-3">
+          <label for="inputmobile4" class="form-label">Mobile</label>
+          <input type="number" class="form-control" id="inputmobile4" name ="mobile"/>
+        </div>
+        <div class="col-md-4">
+          <label for="inputName4" class="form-label">Name</label>
+          <input type="Name" class="form-control" id="inputName4" name ="name"/>
+        </div>
+        <div class="col-md-4">
+          <label for="inputState" class="form-label">State</label>
+          <select id="inputState" class="form-select" name ="state">
+            <option selected>--Select State--</option>
+            <option>A AND N ISLANDS</option>
+            <option>ANDHRA PRADESH</option>
+            <option>ASSAM</option>
+            <option>BIHAR</option>
+            <option>CHANDIGARH</option>
+            <option>CHHATTISGARH</option>
+            <option>DADRA AND NAGAR HAVELI</option>
+            <option>DAMAN AND DIU</option>
+            <option>DELHI</option>
+            <option>GOA</option>
+            <option>GUJARAT</option>
+            <option>HARYANA</option>
+            <option>HIMACHAL PRADESH</option>
+            <option>J AND K</option>
+            <option>JARKAND</option>
+            <option>KARNATAKA</option>
+            <option>KERALA</option>
+            <option>LADAKH</option>
+            <option>LAKSHADWEEP</option>
+            <option>MADHYA PRADESH</option>
+            <option>MAHARASHTRA</option>
+            <option>MANIPUR</option>
+            <option>MEGHALAYA</option>
+            <option>MIZORAM</option>
+            <option>NAGALAND</option>
+            <option>ODISHA</option>
+            <option>PUDUCHERRY</option>
+            <option>PUNJAB</option>
+            <option>RAJASTHAN</option>
+            <option>SIKKIM</option>
+            <option>TAMIL NADU</option>
+            <option>TELANGANA</option>
+            <option>TRIPURA</option>
+            <option>UTTAR PRADESH</option>
+            <option>UTTRAKHAND</option>
+            <option>WEST BENGAL</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label for="inputCity" class="form-label">Address</label>
+          <input type="text" class="form-control" id="inputCity" name ="address" />
+        </div>
+        <h1>Requirements that should be satisfied</h1>
+        <p>The space required per animal should be 40 sq. ft in shed and 80sq.ft open space. Besides, you will also need:
+
+            One room 10” x 10” for keeping implements.
+            One room 10”x 12” for milk storage
+            Office cum living room of suitable size.
+            Water tank capable of storing a minimum of 2000 liters
+            Borewell with the capacity to fill the water tank in 1 hr
+            The total land requirement for a unit of 20 animals can be sited as 3000 sq. ft. There should be space for expansion. Ideal space requirement for 100 animals is 13,000 to 15,000 sq.ft (120″ x 125”). For 20 animals initially, you can make contractual arrangements for getting an assured supply of 300 kgs. of Lucerne and 400 kgs. of maize fodder per day. However, in long run, as the strength of your farm will go up to 100 animals, It is advisable that you should go for a lease land of 15 to 20 acres with an irrigation facility to cultivate green fodder for your animals. (One acre of green fodder cultivation for every five animals is required as a thumb rule.) The economics of whole dairy animal management depends upon its economic feeding. By making fodder like Lucerne or Berseem available for your animals you can reduce the cost of feeding concentrate feed.</p>
+        <h1>Standards that have to be followed</h1>
+        <p>BIS IS 11799:1986 (R2002): Recommendations for Cattle Housing In Rural Areas</p>
+        <p>BIS IS 11942:1986 (R2002): Recommendations for Gaushalas and Other Organized Milk Producers</p>
+        <p>BIS IS 12237:1987 (Reaffirmed 2004): Recommendations for loose housing system for animals</p>
+  </div>
+      <div class = "text-center">
+        <div class="col-md-2">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+{% endblock body %}
+
+{% block title %} Certification form 1{% endblock title %}

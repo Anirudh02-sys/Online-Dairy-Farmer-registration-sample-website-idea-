@@ -1,0 +1,49 @@
+{% extends 'base.html' %} {% block title %} Certification {% endblock title %}
+{% block body %}
+<div class="container">
+  <div class="container-fluid py-5">
+    <h1 class="display-5 fw-bold">Get Certified</h1>
+    <p class="col-md-8 fs-4">
+      Dairy farming is no easy feat , Indian dairy farmers not only rquire a
+      safe and uncontaminated product but a farm that follows regualtions and
+      practices that are approved.To get certified as a good and trustable dairy
+      farmert , he below forms can be filled by any aspiring dairy farmer.
+    </p>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card" style="width: 18rem">
+        <div class="card-body">
+          <h5 class="card-title">Farmer Registration Form</h5>
+          <p class="card-text">To get certified as a dairy farmer</p>
+          <a href="/certform1" class="btn btn-primary">Go to form</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card" style="width: 18rem">
+        <div class="card-body">
+          <h5 class="card-title">Product Quality Form</h5>
+          <p class="card-text">
+            To get approval on the quality of your product
+          </p>
+          <a href="/certform2" class="btn btn-primary">Go to form</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card" style="width: 18rem">
+        <div class="card-body">
+          <h5 class="card-title">Practices Form</h5>
+          <p class="card-text">
+            Get assurance on the quality and performance of your farming practices
+          </p>
+          <a href="/certform3" class="btn btn-primary">Go to form</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock body %}

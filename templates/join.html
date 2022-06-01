@@ -1,0 +1,44 @@
+
+{% extends 'base.html' %}
+{% block title %} 
+Join
+{% endblock title %}
+{% block body %} 
+<div class = 'container'>
+    <div class="text-center">
+        <img class="mb-4" src="https://cdn3.vectorstock.com/i/1000x1000/42/62/milk-logo-design-vector-4574262.jpg" alt="" width="72" height="70">
+        </div>
+    <div class="container">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            {% endfor %}
+        {% endif %}    
+    <h1>JOIN TODAY</h1>
+    <br>
+<form method="POST" action = {% url 'join' %}>
+    {% csrf_token %}
+    <div class="form-group">
+        <input type="text" class="form-control" id="exampleInputFname1" aria-describedby="stuff" placeholder="Enter First Name" name ="fname" value = "{{ fname }}">
+      </div><br>
+    <div class="form-group">
+      <input type="text" class="form-control" id="exampleInputLname1" aria-describedby="stuff" placeholder="Enter Last Name" name ="lname" value = "{{ lname }}">
+    </div><br>
+    <div class="form-group">
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="stuff" placeholder="Enter Email Id" name ="email" value = "{{ email }}">
+      </div><br>
+    <div class="form-group">
+        <input type="number" class="form-control" id="exampleInputPhno1" aria-describedby="stuff" placeholder="Enter Phone Number" name ="phno" value = "{{ phno }}">
+      </div><br>  
+    <div class="form-group">
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name ="password">
+    </div><br>
+    <button type="submit" class="btn btn-primary">Sign up</button>
+  </form>
+</div>
+{% endblock body%}

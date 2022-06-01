@@ -1,0 +1,38 @@
+{% extends 'base.html' %} 
+{% block title %} 
+Certified 
+{% endblock title %}
+{% block body %}
+
+
+<table class="table table-hover table-light">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Certificate 1</th>
+        <th scope="col">Certificate 2</th>
+        <th scope="col">Certificate 3</th>
+      </tr>
+    </thead>
+    {% for item in a_f %}
+    <tbody>
+      <tr>
+        <th scope="row"></th>
+        <td>{{ item.fname }}</td>
+        <td>{{ item.lname }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.phno }}</td>
+        <td>{{ item.cert1 }}</td>
+        <td>{{ item.cert2 }}</td>
+        <td>{{ item.cert3 }}</td>
+      </tr>
+    </tbody> 
+    {% endfor %}
+  </table>
+
+
+{% endblock body %}

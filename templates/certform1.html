@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+  {% if messages %}
+  {% for message in messages %}
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          {{ message }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+  {% endfor %}
+{% endif %}   
+  <br>
+  <h1>Farmer Registration Form</h1>
+  <div class="card">
+    <div class="card-body" >
+      <form class="row g-3" method="POST" action = {% url 'certform1' %}>
+        {% csrf_token %}
+        <div class="col-md-6">
+          <label for="inputmobile4" class="form-label">Mobile</label>
+          <input type="number" class="form-control" id="inputmobile4" name ="mobile"/>
+        </div>
+        <div class="col-md-6">
+          <label for="inputName4" class="form-label">Name</label>
+          <input type="Name" class="form-control" id="inputName4" name ="name"/>
+        </div>
+        <div class="col-md-4">
+          <label for="inputState" class="form-label">State</label>
+          <select id="inputState" class="form-select" name ="state">
+            <option selected>--Select State--</option>
+            <option>A AND N ISLANDS</option>
+            <option>ANDHRA PRADESH</option>
+            <option>ASSAM</option>
+            <option>BIHAR</option>
+            <option>CHANDIGARH</option>
+            <option>CHHATTISGARH</option>
+            <option>DADRA AND NAGAR HAVELI</option>
+            <option>DAMAN AND DIU</option>
+            <option>DELHI</option>
+            <option>GOA</option>
+            <option>GUJARAT</option>
+            <option>HARYANA</option>
+            <option>HIMACHAL PRADESH</option>
+            <option>J AND K</option>
+            <option>JARKAND</option>
+            <option>KARNATAKA</option>
+            <option>KERALA</option>
+            <option>LADAKH</option>
+            <option>LAKSHADWEEP</option>
+            <option>MADHYA PRADESH</option>
+            <option>MAHARASHTRA</option>
+            <option>MANIPUR</option>
+            <option>MEGHALAYA</option>
+            <option>MIZORAM</option>
+            <option>NAGALAND</option>
+            <option>ODISHA</option>
+            <option>PUDUCHERRY</option>
+            <option>PUNJAB</option>
+            <option>RAJASTHAN</option>
+            <option>SIKKIM</option>
+            <option>TAMIL NADU</option>
+            <option>TELANGANA</option>
+            <option>TRIPURA</option>
+            <option>UTTAR PRADESH</option>
+            <option>UTTRAKHAND</option>
+            <option>WEST BENGAL</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label for="inputCity" class="form-label">District</label>
+          <input type="text" class="form-control" id="inputCity" name ="district" />
+        </div>
+        <div class="col-md-4">
+          <label for="inputCity" class="form-label">Block</label>
+          <input type="text" class="form-control" id="inputCity" name ="block" />
+        </div>
+        <div class="col-md-4">
+          <label for="inputCity" class="form-label">Village/Town</label>
+          <input type="text" class="form-control" id="inputCity" name ="town"/>
+        </div>
+        <div class="col-md-2">
+          <label for="inputAge" class="form-label">Age</label>
+          <input type="number" class="form-control" id="inputAge" name ="age"/>
+        </div>
+        <div class="col-md-2">
+          <label for="inputState" class="form-label">Gender</label>
+          <select id="inputState" class="form-select " name ="gender">
+            <option selected>--Select Gender--</option>s
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <label for="inputQual" class="form-label">Qualification</label>
+          <select id="inputQual" class="form-select" name ="qualification">
+            <option selected>Illiterate</option>
+            <option>Semi-literate</option>
+            <option>Primary</option>
+            <option>Middle</option>
+            <option>10th/12th</option>
+            <option>Graduate</option>
+          </select>
+      </div>
+      <div class="col-md-2">
+        <label for="inputhold" class="form-label">Land Holding</label>
+        <select id="inputhold" class="form-select " name ="land">
+          <option selected>Landless</option>
+          <option>Less than 1 Hectare</option>
+          <option>1-2 Hectare</option>
+          <option>More than 2 Hectares</option>
+        </select>
+    </div>
+    <div class="col-md-12">
+    <fieldset class="row mb-2">
+      <legend class="col-form-label col-sm-2 pt-0">Mode of SMS</legend>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked name ="sms">
+          <label class="form-check-label" for="gridRadios1">
+            Text
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2" name ="sms">
+          <label class="form-check-label" for="gridRadios2">
+            Voice
+          </label>
+        </div>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+      <div class = "text-center">
+        <div class="col-md-2">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+{% endblock body %}
+
+{% block title %} Certification form 1{% endblock title %}

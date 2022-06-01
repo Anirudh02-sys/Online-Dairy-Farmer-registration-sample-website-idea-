@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+  {% if messages %}
+  {% for message in messages %}
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          {{ message }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+  {% endfor %}
+{% endif %}   
+  <br>
+  <h1>Product Quality Form</h1>
+  <h2>Category:</h2>
+  <p>Dairy products and analogues,excluding products of food category 2.0</p>
+  <div class="card">
+    <div class="card-body" >
+      <form class="row g-3" method="POST" action = {% url 'certform2' %}>
+        {% csrf_token %}
+        <div class="col-md-4">
+          <label for="inputmobile4" class="form-label">Email</label>
+          <input type="email" class="form-control" id="inputmobile4" name ="email"/>
+        </div>
+        <div class="col-md-3">
+          <label for="inputmobile4" class="form-label">Mobile</label>
+          <input type="number" class="form-control" id="inputmobile4" name ="mobile"/>
+        </div>
+        <div class="col-md-4">
+          <label for="inputName4" class="form-label">Name</label>
+          <input type="Name" class="form-control" id="inputName4" name ="name"/>
+        </div>
+        <div class="col-md-4">
+          <label for="inputState" class="form-label">State</label>
+          <select id="inputState" class="form-select" name ="state">
+            <option selected>--Select State--</option>
+            <option>A AND N ISLANDS</option>
+            <option>ANDHRA PRADESH</option>
+            <option>ASSAM</option>
+            <option>BIHAR</option>
+            <option>CHANDIGARH</option>
+            <option>CHHATTISGARH</option>
+            <option>DADRA AND NAGAR HAVELI</option>
+            <option>DAMAN AND DIU</option>
+            <option>DELHI</option>
+            <option>GOA</option>
+            <option>GUJARAT</option>
+            <option>HARYANA</option>
+            <option>HIMACHAL PRADESH</option>
+            <option>J AND K</option>
+            <option>JARKAND</option>
+            <option>KARNATAKA</option>
+            <option>KERALA</option>
+            <option>LADAKH</option>
+            <option>LAKSHADWEEP</option>
+            <option>MADHYA PRADESH</option>
+            <option>MAHARASHTRA</option>
+            <option>MANIPUR</option>
+            <option>MEGHALAYA</option>
+            <option>MIZORAM</option>
+            <option>NAGALAND</option>
+            <option>ODISHA</option>
+            <option>PUDUCHERRY</option>
+            <option>PUNJAB</option>
+            <option>RAJASTHAN</option>
+            <option>SIKKIM</option>
+            <option>TAMIL NADU</option>
+            <option>TELANGANA</option>
+            <option>TRIPURA</option>
+            <option>UTTAR PRADESH</option>
+            <option>UTTRAKHAND</option>
+            <option>WEST BENGAL</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label for="inputCity" class="form-label">Address</label>
+          <input type="text" class="form-control" id="inputCity" name ="address" />
+        </div>
+        <div class="col-md-2">
+          <label for="inputAge" class="form-label">Age</label>
+          <input type="number" class="form-control" id="inputAge" name ="age"/>
+        </div>
+        <div class="col-md-3">
+          <label for="inputState" class="form-label">No. of years you want to apply for?</label>
+          <select id="inputState" class="form-select " name ="year">
+            <option selected>--Select--</option>s
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+          
+        <div class="col-md-2">
+          <label for="inputQual" class="form-label">Product</label>
+          <select id="inputQual" class="form-select" name ="product">
+            <option selected>Buffalo Milk</option> 
+            <option>Cow Milk</option> 
+            <option>Goat or Sheep Milk</option> 
+            <option>Camel Milk</option> 
+            <option>Mixed Milk</option> 
+            <option>Standardized Milk</option> 
+            <option>Toned Milk</option>
+            <option>Double Toned Milk</option>
+            <option>Skimmed Milk</option>
+            <option>Full Cream Milk</option> 
+            <option>Buttermilk (plain)</option>
+            <option>Flavoured Milk</option> 
+            <option>Flavoured fermented milk</option> 
+            <option>Drinks based on fermented milk</option> 
+          </select>
+      </div>
+      <div class="col-md-3">
+        <label for="inputhold" class="form-label">Source of water supply</label>
+        <select id="inputhold" class="form-select " name ="water">
+          <option selected>Public</option>
+          <option>Private</option>
+          <option>Others</option>
+          <option>N/A</option>
+        </select>
+    </div>
+    <div class="col-md-4">
+      <label for="inputAge" class="form-label">Sanction Electricity Load or HP Used (0 if not used)</label>
+      <input type="number" class="form-control" id="inputAge" name ="electricity"/>
+    </div>
+    <div class="col-md-2">
+      <label for="inputAge" class="form-label">Intended date of start</label>
+      <input type="date" class="form-control" id="inputAge" name ="start"/>
+    </div>
+   
+  </div>
+      <div class = "text-center">
+        <div class="col-md-2">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+{% endblock body %}
+
+{% block title %} Certification form 1{% endblock title %}
